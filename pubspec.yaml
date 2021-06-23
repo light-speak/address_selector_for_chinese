@@ -1,6 +1,6 @@
 name: address_selector_for_chinese
 description: 中国的省市区选择器
-version: 0.0.1-beta.0
+version: 0.0.1-beta.1
 homepage: https://github.com/lty5240/address_selector_for_chinese
 # 以 https://github.com/shenhuaxiyuan/flutter_jd_address_selector 为基础进行修改
 
