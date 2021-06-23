@@ -8,7 +8,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lpinyin/lpinyin.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import 'entity_info.dart';
 import 'province.dart';
@@ -389,7 +388,6 @@ class _AddressSelectorState extends State<AddressSelector> with TickerProviderSt
   }
 
   Widget _buildListView() {
-    var _itemController = ItemScrollController();
     var tagSet = HashSet<String>();
     mList.forEach((info) {
       String susTag = info.getSuspensionTag();
@@ -400,7 +398,6 @@ class _AddressSelectorState extends State<AddressSelector> with TickerProviderSt
     return AzListView(
       key: ValueKey(_index),
       data: mList,
-      itemScrollController: _itemController,
       itemBuilder: (context, index) => _buildListItem(mList[index]),
       itemCount: mList.length,
       indexBarData: tagList,
