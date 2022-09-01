@@ -2,6 +2,9 @@
 
 中国的省市区选择器
 
+> 本项目已更新至：
+> [2021年统计用区划代码和城乡划分代码（截止时间：2021-10-31，发布时间：2021-12-30）](http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2021/index.html)
+
 ## Getting Started
 
 ### pubspec.yaml
@@ -21,22 +24,23 @@
 
 ```dart
     void show() async {
-      showMaterialModalBottomSheet(
-          context: context,
-          builder: (BuildContext context) => AddressSelector(
-            onSelected: (Result result) {
-              print(result);
-            },
-            title: '选择地址',
-            selectedColor: Colors.red,
-            unselectedColor: Colors.black,
-          ),
-      );
-    }
+  showMaterialModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) =>
+        AddressSelector(
+          onSelected: (Result result) {
+            print(result);
+          },
+          title: '选择地址',
+          selectedColor: Colors.red,
+          unselectedColor: Colors.black,
+        ),
+  );
+}
 ```
 
-
 ## LICENSE
+
 ```
                             The MIT License (MIT)
 
