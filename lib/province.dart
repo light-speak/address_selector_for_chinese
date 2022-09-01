@@ -11,15 +11,15 @@ class Province {
 
   Province.fromJson(Map<String, dynamic> json) {
     this.name = json['name'];
-    this.no = json['no'];
-    this.cityList = (json['cityList'] as List).map((i) => City.fromJson(i)).toList();
+    this.no = json['code'];
+    this.cityList = (json['children'] as List).map((i) => City.fromJson(i)).toList();
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
-    data['no'] = this.no;
-    data['cityList'] = this.cityList.map((i) => i.toJson()).toList();
+    data['code'] = this.no;
+    data['children'] = this.cityList.map((i) => i.toJson()).toList();
     return data;
   }
 }
@@ -37,14 +37,14 @@ class City {
 
   City.fromJson(Map<String, dynamic> json) {
     this.name = json['name'];
-    this.no = json['no'];
-    this.countyList = (json['countyList'] as List).map((i) => County.fromJson(i)).toList();
+    this.no = json['code'];
+    this.countyList = (json['children'] as List).map((i) => County.fromJson(i)).toList();
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
-    data['no'] = this.no;
+    data['code'] = this.no;
     data['countyList'] = this.countyList.map((i) => i.toJson()).toList();
     return data;
   }
@@ -61,13 +61,13 @@ class County {
 
   County.fromJson(Map<String, dynamic> json) {
     this.name = json['name'];
-    this.no = json['no'];
+    this.no = json['code'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
-    data['no'] = this.no;
+    data['code'] = this.no;
     return data;
   }
 }

@@ -141,7 +141,7 @@ class _AddressSelectorState extends State<AddressSelector> with TickerProviderSt
               ),
             ),
             _line,
-            if (_index == 0) _buildHeader(),
+            // if (_index == 0) _buildHeader(),
             Expanded(child: provinces.length > 0 ? _buildListView() : CupertinoActivityIndicator(animating: false)),
           ],
         ),

@@ -15,18 +15,26 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: InkWell(
-        child: Text('打开地址选择器'),
-        onTap: () {
-          showMaterialModalBottomSheet(
-            context: context,
-            builder: (BuildContext context) => AddressSelector(
-              onSelected: (Result result) {
-                print(result);
-              },
-              title: '选择地址',
-              selectedColor: Colors.red,
-              unselectedColor: Colors.black,
+      home: Builder(
+        builder: (BuildContext context) {
+          return Scaffold(
+            body: Center(
+              child: InkWell(
+                child: Text('打开地址选择器'),
+                onTap: () {
+                  showMaterialModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) => AddressSelector(
+                      onSelected: (Result result) {
+                        print(result);
+                      },
+                      title: '选择地址',
+                      selectedColor: Colors.red,
+                      unselectedColor: Colors.black,
+                    ),
+                  );
+                },
+              ),
             ),
           );
         },
